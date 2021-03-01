@@ -18,11 +18,11 @@ void setup()
 void loop()
 {
   int light = analogRead(photores_pin);
-  int rotate = map(light, 0, 1023, 90, 0);
+  int rotate = map(light, 70, 400, 90, 0);
   window.write(rotate);
   
   
-  int brightness = map(light, 450, 1023, 0, 255);
+  int brightness = map(light, 70, 400, 0, 255);
   analogWrite(led_pin, brightness);
   
   Serial.println(analogRead(photores_Pin));
