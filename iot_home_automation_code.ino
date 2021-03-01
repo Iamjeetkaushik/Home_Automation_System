@@ -8,8 +8,10 @@ int led_pin = 8;
 
 void setup()
 {
+  analogReference(DEFAULT);
   pinMode(led_pin, OUTPUT);
   window.attach(window_pin);
+  Serial.begin(9600);
 }
 
 
@@ -22,4 +24,7 @@ void loop()
   
   int brightness = map(light, 450, 1023, 0, 255);
   analogWrite(led_pin, brightness);
+  
+  Serial.println(analogRead(photores_Pin));
+  delay(500);
 }
